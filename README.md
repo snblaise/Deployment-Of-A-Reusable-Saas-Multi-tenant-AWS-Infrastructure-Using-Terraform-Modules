@@ -12,36 +12,36 @@ The infrastructure was based on AWS services such as EC2 instances, DynamoDB dat
 
 ![Alt text](<images/Terraforms project architecture.drawio.png>)
 
-To implement this project, I adopted a methodology by breaking down the process in several steps which will be eazy to trouble shoot that the following step
+To implement this project, I adopted a methodology by breaking down the process into several steps which will make it easy to troubleshoot the following step
 
 # step 1 
 connect to the new AWS CodeCommit repository (humangov-infrastructure) to securely store Terraform configuration files 
 
 # step 2 
-Designing a Terraform module that vreates and congigures AWS resources such as EC2 instances, RDS databses, and S3 bucket for nul;tinenant SaaS applications
+Designing a Terraform module that creates and configures AWS resources such as EC2 instances, RDS databases, and S3 buckets for null; tenant SaaS applications
 
 # step 3 
-Implement AWS IAM roles and policies to provides secure access to the deployed resources
+Implement AWS IAM roles and policies to provide secure access to the deployed resources
 
 # step 4
-Configure the Terraform backend to use an S3 bucket for storing the terraform state files 
+Configure the Terraform backend to use an S3 bucket for storing the Terraform state files 
 
 # step 5
-Deploy the infrastructure using Terraform and testing the setup to ensure it's working as expected. 
+Deploy the infrastructure using Terraform and test the setup to ensure it's working as expected. 
 
 # step 6 
-Document the process and providing instructions on how to reuse and customize the terraform module for different tenants 
+Document the process and provide instructions on how to reuse and customize the terraform module for different tenants 
 
 
-by the end of this project, we will have a reusable, scalable, and scure SaaS multi-tenant infrastructure on AWS, leveragin the power of TErraform modules and the security of AWS codeCommit. This infreastructure will serve as a blueprint for future deployments, making it easier and more efficient for HumanGov to deploy and manage their SaaS applications in the cloud. 
+by the end of this project, we will have a reusable, scalable, and secure SaaS multi-tenant infrastructure on AWS, leveraging the power of TErraform modules and the security of AWS codeCommit. This infrastructure will serve as a blueprint for future deployments, making it easier and more efficient for HumanGov to deploy and manage their SaaS applications in the cloud. 
 
 To have a better experience I created a cloud9 environment to code the infrastructure, if you have challenges doing that check out my post on setting up cloud9 and linking it to AWS CodeCommit found here.
 
-Let get to it. 
+Let's dive into it. 
 
 # Terraform Modules and AWS Code Commit - Implementation - | AWS
 
-Move to `human-gov-infrastructure` folder:
+Move to the `human-gov-infrastructure` folder:
 
 ```
 cd human-gov-infrastructure
@@ -193,7 +193,7 @@ In your root project directory, create the file `variables.tf`:
 ```
 variable "states" {
   description = "A list of state names"
-  default = ["california","california","texa"]
+  default = ["California","California","Denver"]
 }
 
 ```
@@ -324,7 +324,7 @@ tfstate.backup
 
 ![Alt text](images/gitignore.png)
 
-Add Terraform files to the local git repository, commit and push them to AWS CodeCommit:
+Add Terraform files to the local git repository, commit, and push them to AWS CodeCommit:
 
 ```
 git status
@@ -375,7 +375,7 @@ tfstate.backup
 
 ```
 
-Add Terraform files to the local git repository, commit and push them to AWS CodeCommit:
+Add Terraform files to the local git repository, commit, and push them to AWS CodeCommit:
 
 ```
 git status
