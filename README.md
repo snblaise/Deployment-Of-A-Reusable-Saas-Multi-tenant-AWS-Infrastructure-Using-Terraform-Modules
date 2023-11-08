@@ -1,6 +1,6 @@
 ## Project title:
 
-## HumanGov: Deployment Of A Reusable Saas Multi-tenant AWS Infrastructure Using Terraform Modules Securely Storing Terraform Configuration Files On AWS Code Commit.
+## Deployment Of A Reusable Saas Multi-tenant AWS Infrastructure Using Terraform Modules Securely Storing Terraform Configuration Files On AWS Code Commit.
 
 ![Alt text](<images/Terraforms module.drawio.png>)
 
